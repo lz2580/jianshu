@@ -3,7 +3,9 @@ import { Provider } from 'react-redux';
 import { GlobalStyle } from './style';
 import {IconFont} from './static/iconfont/iconfont'
 import {BrowserRouter,Route} from "react-router-dom";
-import Header from './common/heard'
+import Header from './common/heard';
+import Home from './pages/home/';
+import Detail from './pages/detail'
 import store from './store'
 class App extends Component{
 	render() {
@@ -15,8 +17,8 @@ class App extends Component{
 				<Header/>
 				<BrowserRouter>
 					<div>
-						<Route path='/' exact render={() => <div>首页</div>}></Route>
-						<Route path='/detail' exact render={() => <div>detail</div>}></Route>
+						<Route path='/' exact component={Home}></Route>
+						<Route path='/detail' exact component={ Detail}></Route>
 					</div>
 				</BrowserRouter>
 				</Fragment>
